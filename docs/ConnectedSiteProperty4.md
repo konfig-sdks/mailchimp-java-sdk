@@ -1,0 +1,15 @@
+
+
+# ConnectedSiteProperty4
+
+The Connected Site associated with the store.
+
+## Properties
+
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**siteForeignId** | **String** | The unique identifier for the connected site. |  [optional] [readonly] |
+|**siteScript** | [**ScriptProperty10**](ScriptProperty10.md) |  |  [optional] |
+
+
+

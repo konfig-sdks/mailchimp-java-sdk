@@ -1,0 +1,129 @@
+# RootApi
+
+All URIs are relative to *https://server.api.mailchimp.com/3.0*
+
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**listResources**](RootApi.md#listResources) | **GET** / | List api root resources |
+
+
+<a name="listResources"></a>
+# **listResources**
+> RootListResourcesResponse listResources().fields(fields).excludeFields(excludeFields).execute();
+
+List api root resources
+
+Get links to all other resources available in the API.
+
+### Example
+```java
+import com.konfigthis.client.ApiClient;
+import com.konfigthis.client.ApiException;
+import com.konfigthis.client.ApiResponse;
+import com.konfigthis.client.Mailchimp;
+import com.konfigthis.client.Configuration;
+import com.konfigthis.client.auth.*;
+import com.konfigthis.client.model.*;
+import com.konfigthis.client.api.RootApi;
+import java.util.List;
+import java.util.Map;
+import java.util.UUID;
+
+public class Example {
+  public static void main(String[] args) {
+    Configuration configuration = new Configuration();
+    configuration.host = "https://server.api.mailchimp.com/3.0";
+    
+    // Configure HTTP basic authorization: basicAuth
+    configuration.username = "YOUR USERNAME";
+    configuration.password = "YOUR PASSWORD";
+    Mailchimp client = new Mailchimp(configuration);
+    List<String> fields = Arrays.asList(); // A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.
+    List<String> excludeFields = Arrays.asList(); // A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.
+    try {
+      RootListResourcesResponse result = client
+              .root
+              .listResources()
+              .fields(fields)
+              .excludeFields(excludeFields)
+              .execute();
+      System.out.println(result);
+      System.out.println(result.getAccountId());
+      System.out.println(result.getLoginId());
+      System.out.println(result.getAccountName());
+      System.out.println(result.getEmail());
+      System.out.println(result.getFirstName());
+      System.out.println(result.getLastName());
+      System.out.println(result.getUsername());
+      System.out.println(result.getAvatarUrl());
+      System.out.println(result.getRole());
+      System.out.println(result.getMemberSince());
+      System.out.println(result.getPricingPlanType());
+      System.out.println(result.getFirstPayment());
+      System.out.println(result.getAccountTimezone());
+      System.out.println(result.getAccountIndustry());
+      System.out.println(result.getContact());
+      System.out.println(result.getProEnabled());
+      System.out.println(result.getLastLogin());
+      System.out.println(result.getTotalSubscribers());
+      System.out.println(result.getIndustryStats());
+      System.out.println(result.getLinks());
+    } catch (ApiException e) {
+      System.err.println("Exception when calling RootApi#listResources");
+      System.err.println("Status code: " + e.getStatusCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+
+    // Use .executeWithHttpInfo() to retrieve HTTP Status Code, Headers and Request
+    try {
+      ApiResponse<RootListResourcesResponse> response = client
+              .root
+              .listResources()
+              .fields(fields)
+              .excludeFields(excludeFields)
+              .executeWithHttpInfo();
+      System.out.println(response.getResponseBody());
+      System.out.println(response.getResponseHeaders());
+      System.out.println(response.getStatusCode());
+      System.out.println(response.getRoundTripTime());
+      System.out.println(response.getRequest());
+    } catch (ApiException e) {
+      System.err.println("Exception when calling RootApi#listResources");
+      System.err.println("Status code: " + e.getStatusCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **fields** | [**List&lt;String&gt;**](String.md)| A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation. | [optional] |
+| **excludeFields** | [**List&lt;String&gt;**](String.md)| A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation. | [optional] |
+
+### Return type
+
+[**RootListResourcesResponse**](RootListResourcesResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/problem+json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** |  |  -  |
+| **0** | An error generated by the Mailchimp API. |  -  |
+
